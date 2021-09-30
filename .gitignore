@@ -1,0 +1,14 @@
+# Dependency directories
+node_modules/
+npm-debug.log
+
+# dotenv environment variables file
+.env
+
+# Docker
+Dockerfile
+docker-compose.yml
+
+tmp/*.mp3
+!tmp/tmp.txt
+tmp/*

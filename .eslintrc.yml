@@ -1,0 +1,42 @@
+env:
+  browser: true
+  commonjs: true
+  es2021: true
+extends:
+  - standard
+parserOptions:
+  ecmaVersion: 12
+rules: {
+  "quotes": ["error", "single"],
+  "no-console": 1,
+  "no-useless-constructor": 0,
+  "no-unused-vars": [1, {"vars": "all", "args": "none"}],
+  "no-lonely-if": 2,
+  "no-else-return": 2,
+  "no-empty-function": 1,
+  "no-eq-null": 2,
+  "no-var": 2,
+  "strict": ["error", "global"],
+  "semi": ["error", "always"],
+  "indent": ["error", 2],
+  "prefer-arrow-callback": ["error", {"allowNamedFunctions": true}],
+  # in practice, those are always errors
+  no-unreachable: 2,
+  # probably always an error, tell me if it's not
+  no-new-require: 2,
+  # just warnings about whitespace weirdness here
+  eol-last: 1,
+  no-irregular-whitespace: 1,
+  no-mixed-spaces-and-tabs: [1, "smart-tabs"],
+  no-trailing-spaces: 1,
+  # useful to have in node.js,
+  # if you're sure you don't need to handle error, rename it to "_err"
+  handle-callback-err: 2,
+
+  # just to make sure we don't forget to remove them when releasing
+  no-debugger: 2,
+
+  # add "falls through" for those
+  no-fallthrough: 2,
+  no-control-regex: 0
+}
