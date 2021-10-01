@@ -3,7 +3,7 @@ const qrcode = require('qrcode-terminal');
 const helpers = require('../utils/helpers');
 
 const whatsappClient = async () => {
-    const client = new Client();
+    const client = new Client({headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox'] });
 
     client.on('qr', (qr) => {
         qrcode.generate(qr, {small: true});
