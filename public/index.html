@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Socket.io simple chat</title>
+      <!-- Include Bootstrap for styling -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+      <style>
+         #qrcode {
+           
+            margin-top:15px;
+         }
+       </style>
+   </head>
+   <body>
+      <div class="container-fluid">
+         <div class="text-center">
+            <div id="qrcode">
+               <!-- <canvas></canvas> -->
+            </div>
+         <div class="text-center">
+            <p class="status-auth">Status: -</p>
+         </div>
+       
+       </div>
+      <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+      <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.2.0/socket.io.js"></script> -->
+      <script src="/socket.io/socket.io.js"></script>
+      <script>
+         var socket = io();
+         function htmlEncode(value) {
+            return $('<div/>').text(value)
+            .html();
+         }
+         socket.on("qrcode", function (data) {
+            $("#qrcode").empty();
+            $('#qrcode').qrcode({width: 264,height: 264,text: data.qr});
+            $(".text-center .status-auth").text(data.text);
+         });
+         socket.on("statusAuth", function (data) {
+            $(".text-center .status-auth").text(data.text);
+         });
+      </script>       
+   </body>
+</html>

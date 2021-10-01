@@ -3,8 +3,9 @@ const project = require('../../package.json');
 const wrapper = require('../helpers/utils/wrapper');
 const basicAuth = require('../auth/basic_auth_helper');
 const corsMiddleware = require('restify-cors-middleware');
-// const sockets = require('../infrastructure/socket.io/connection');
+const sockets = require('../infrastructure/socket.io/connection');
 const observerEventHandler = require('../modules/observers');
+const path = require('path');
 
 function AppServer () {
   this.server = restify.createServer({
@@ -33,18 +34,22 @@ function AppServer () {
   this.server.use(basicAuth.init());
 
   // anonymous can access the end point, place code bellow
-  this.server.get('/', (req, res) => {
-    wrapper.response(res, 'success', wrapper.data('Index'), 'This service is running properly');
-  });
+  // this.server.get('/', (req, res) => {
+  //   wrapper.response(res, 'success', wrapper.data('Index'), 'This service is running properly');
+  // });
 
   /*
     ====================
         Add new route
     ====================
   */
- 
 
-  // sockets.init(this.server);
+  this.server.get('/public', restify.plugins.serveStatic({
+    directory: path.join(__dirname, `../../`),
+    default: 'index.html',
+  }));
+
+  sockets.init(this.server);
   observerEventHandler.init();
 }
 
