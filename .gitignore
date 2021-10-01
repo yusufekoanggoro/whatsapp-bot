@@ -12,3 +12,5 @@ docker-compose.yml
 tmp/*.mp3
 !tmp/tmp.txt
 tmp/*
+
+model.nlp

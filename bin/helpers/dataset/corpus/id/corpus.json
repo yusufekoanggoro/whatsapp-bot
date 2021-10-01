@@ -1,0 +1,58 @@
+{
+   "name":"corpus-id",
+   "locale":"id",
+   "data":[
+      {
+         "intent": "greetings.hello",
+         "utterances": ["halo", "hai", "helo"],
+         "answers": ["Hai!", "Halo!"]
+      },
+      {
+         "intent": "greetings.howareyou",
+         "utterances": [
+            "bagaimana harimu",
+            "bagaimana hari mu",
+            "bagaimana kabarmu",
+            "bagaimana kabar mu",
+            "apa kabar", 
+            "apa kamu baik baik saja"],
+         "answers": ["Merasa luar biasa!", "Luar biasa! Terima kasih telah bertanya"]
+      },
+      {
+         "intent": "greetings.nicetomeetyou",
+         "utterances": [
+            "saya senang bertemu denganmu"
+         ],
+         "answers": ["Senang bertemu denganmu juga", "Begitu juga. Aku berharap bisa membantumu", "Senang bertemu denganmu, juga", "Kesenangan adalah milikku"]
+      },
+      {
+         "intent": "greetings.islam",
+         "utterances": ["assalamualaikum", "assalamualaikum warahmatullahi wabarakatu"],
+         "answers": ["Waalaikumsalam", "Waalaikumsalam warahmatullahi wabarakatuh"]
+      },
+      {
+         "intent": "greetings.day",
+         "utterances": ["selamat pagi"],
+         "answers": ["Pagi juga", "Selamat Pagi juga"]
+      },   
+      {
+         "intent": "greetings.noon",
+         "utterances": ["selamat siang"],
+         "answers": ["Siang juga", "Selamat Siang juga"]
+      },
+      {
+         "intent": "greetings.night",
+         "utterances": ["selamat malam"],
+         "answers": ["malam juga", "selamat malam juga"]
+      },
+      {
+         "intent":"None",
+         "utterances":[
+            
+         ],
+         "answers":[
+            "Mohon maaf saya belum mengerti. saya akan mempelajarinya lagi."
+         ]
+      }
+   ]
+}

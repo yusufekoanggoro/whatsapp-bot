@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node --trace-warnings index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --delay 500ms index.js",
+    "dev": "nodemon index.js",
     "lint": "eslint bin",
     "lint:fix": "npm run lint -- --fix"
   },
@@ -15,11 +15,12 @@
     "url": ""
   },
   "keywords": [
-    "heroku"
+    "chatbot"
   ],
   "author": "Yusuf Eko Anggoro",
   "license": "ISC",
   "dependencies": {
+    "@nlpjs/basic": "^4.22.0",
     "confidence": "^5.0.1",
     "dotenv": "^10.0.0",
     "joi": "^17.4.2",
@@ -28,11 +29,13 @@
     "passport": "^0.4.1",
     "passport-http": "^0.3.0",
     "pre-commit": "^1.2.2",
+    "qrcode-terminal": "^0.12.0",
     "restify": "^8.5.1",
     "restify-cors-middleware": "^1.1.1",
     "socket.io": "^4.2.0",
     "uuid": "^8.3.2",
     "validate.js": "^0.13.1",
+    "whatsapp-web.js": "^1.14.1",
     "winston": "^2.4.4"
   },
   "devDependencies": {
